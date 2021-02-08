@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentInsertEmployee">
+
+    <fragment
+        android:id="@+id/fragmentInsertEmployee"
+        android:name="com.abkhrr.comm.bank.presentation.main.fragment.insert.FragmentInsertEmployee"
+        android:label="FragmentInsertEmployee"
+        tools:layout="@layout/fragment_insert_employee">
+
+        <action
+            android:id="@+id/to_fragment_list_employee"
+            app:destination="@+id/fragmentListEmployee"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentListEmployee"
+        android:name="com.abkhrr.comm.bank.presentation.main.fragment.list.FragmentListEmployee"
+        android:label="FragmentListEmployee"
+        tools:layout="@layout/fragment_list_employee">
+
+        <action
+            android:id="@+id/to_fragment_edit_employee"
+            app:destination="@+id/fragmentEditEmployee"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentEditEmployee"
+        android:name="com.abkhrr.comm.bank.presentation.main.fragment.edit.FragmentEditEmployee"
+        android:label="FragmentEditEmployee"
+        tools:layout="@layout/fragment_edit_employee">
+
+        <argument
+            android:name="employee"
+            app:argType="com.abkhrr.comm.bank.domain.dto.model.response.Employee" />
+
+    </fragment>
+
+</navigation>
